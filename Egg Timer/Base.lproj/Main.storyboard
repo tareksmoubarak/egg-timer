@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_0" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -9,16 +12,82 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Egg_Timer" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="O2c-pE-3tw">
+                                <rect key="frame" x="0.0" y="524" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <items>
+                                    <barButtonItem title="-10" id="neM-jI-Jg1">
+                                        <connections>
+                                            <action selector="minusTen:" destination="BYZ-38-t0r" id="AqR-lE-yti"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="adW-k2-OmH"/>
+                                    <barButtonItem title="Reset" id="MCd-Cu-Js2">
+                                        <connections>
+                                            <action selector="resetBtnClicked:" destination="BYZ-38-t0r" id="uH4-df-ael"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="ESj-er-S6Y"/>
+                                    <barButtonItem title="+10" id="lNg-F9-Wko">
+                                        <connections>
+                                            <action selector="plusTen:" destination="BYZ-38-t0r" id="bnm-Vm-NDC"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RTh-S7-XQH">
+                                <rect key="frame" x="0.0" y="20" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <items>
+                                    <navigationItem title="Egg Timer" id="Vhs-xC-FbD">
+                                        <barButtonItem key="leftBarButtonItem" systemItem="pause" id="7eC-lT-34j">
+                                            <connections>
+                                                <action selector="pauseBtnClicked:" destination="BYZ-38-t0r" id="cfR-Zo-tYu"/>
+                                            </connections>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" systemItem="play" id="Iju-Hq-1oZ">
+                                            <connections>
+                                                <action selector="playBtnClicked:" destination="BYZ-38-t0r" id="RI7-nd-Hkb"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lmr-BX-YVg">
+                                <rect key="frame" x="16" y="234" width="288" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="BeT-my-S3e"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="Lmr-BX-YVg" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="1HW-SS-E4O"/>
+                            <constraint firstItem="Lmr-BX-YVg" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="7HI-Py-Yoq"/>
+                            <constraint firstItem="Lmr-BX-YVg" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="Aux-og-BgB"/>
+                            <constraint firstItem="Lmr-BX-YVg" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="S01-6B-ezm"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Lmr-BX-YVg" secondAttribute="trailing" constant="16" id="UJm-ud-JYq"/>
+                            <constraint firstItem="Lmr-BX-YVg" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="crW-nQ-lzy"/>
+                            <constraint firstItem="Lmr-BX-YVg" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="fqL-3C-BKc"/>
+                            <constraint firstItem="Lmr-BX-YVg" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="naX-Y7-Nwk"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="timeLbl" destination="Lmr-BX-YVg" id="foF-4e-bAV"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="136.80000000000001" y="133.5832083958021"/>
         </scene>
     </scenes>
 </document>
